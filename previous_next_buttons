@@ -1,0 +1,35 @@
+<button id="p_2">Προηγούμενο</button>
+<button id="b_2">Επόμενο</button>
+
+<script>
+	jQuery(document).ready(function(){
+
+		jQuery('#p_2').click(function(e){
+			e.preventDefault();
+
+			jQuery('.vc_row-fluid,.content-section').eq(1).css('display','');
+			jQuery('.vc_row-fluid,.content-section').eq(2).css('display','none');
+			jQuery('html,body').animate({ 'scrollTop': 0 }, 2000);
+			
+		});
+
+		jQuery('#b_2').click(function(e){
+			e.preventDefault();
+			
+			if ( !jQuery('.fw-radio_2').is(':checked') || !jQuery('.fw-radio_3').is(':checked') || jQuery('#msf-text-varos').val() == "" || jQuery('#msf-text-ipsos').val() == "" || jQuery('#msf-text-ilikia').val() == ""){
+				alert('Συμπλήρωσε όλα τα πεδία');
+			}
+			else {
+				jQuery('.vc_row-fluid,.content-section').eq(2).css('display','none');
+				jQuery('.vc_row-fluid,.content-section').eq(3).css('display','');
+			}
+			jQuery('html,body').animate({ 'scrollTop': 0 }, 2000);
+		
+		});
+		var rr;
+			for(rr=2; rr<9; rr++){
+			jQuery('.vc_row-fluid,.content-section').eq(rr).css('display','none');
+			}
+	});
+
+</script>
